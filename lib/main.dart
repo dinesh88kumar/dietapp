@@ -76,16 +76,16 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15))),
           elevation: 8,
           toolbarHeight: 60,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.black),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text('title'),
               Icon(Icons.notifications, size: 24, color: Colors.black)
             ],
@@ -101,14 +101,14 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 FontAwesomeIcons.briefcase,
                 color: _selectedIndex == 0 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('Diet'),
+              title: const Text('Diet'),
             ),
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.boxOpen,
                 color: _selectedIndex == 1 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('excersise'),
+              title: const Text('excersise'),
             ),
             BottomNavigationBarItem(
               icon: FaIcon(
