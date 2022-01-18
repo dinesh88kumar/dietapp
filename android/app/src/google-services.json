@@ -1,0 +1,151 @@
+{
+  "project_info": {
+    "project_number": "1092249724059",
+    "firebase_url": "https://restaurant-2815b-default-rtdb.firebaseio.com",
+    "project_id": "restaurant-2815b",
+    "storage_bucket": "restaurant-2815b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092249724059:android:ee7ae763fe14f9f474523e",
+        "android_client_info": {
+          "package_name": "com.example.boova"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092249724059-l01b0nk4kq1hhlempro1ivegrbe4f9ji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.boova",
+            "certificate_hash": "9edd3035f9e62a842d3783505d1e582e7108022b"
+          }
+        },
+        {
+          "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhAgT2ew9JFkD_NIPgz2zKYPEkJXTXKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092249724059:android:1a397534b8ee4d6974523e",
+        "android_client_info": {
+          "package_name": "com.example.diet_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092249724059-agef84p96d3b3ngergklpsd0qdk1sri4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diet_app",
+            "certificate_hash": "9edd3035f9e62a842d3783505d1e582e7108022b"
+          }
+        },
+        {
+          "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhAgT2ew9JFkD_NIPgz2zKYPEkJXTXKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092249724059:android:e92ecff902d9ad6f74523e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_proj2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092249724059-hhspk84dq4hlcqsg1tgi9g9lnk7mac1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_proj2",
+            "certificate_hash": "9edd3035f9e62a842d3783505d1e582e7108022b"
+          }
+        },
+        {
+          "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhAgT2ew9JFkD_NIPgz2zKYPEkJXTXKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092249724059:android:390c83c71f8353a874523e",
+        "android_client_info": {
+          "package_name": "com.example.restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhAgT2ew9JFkD_NIPgz2zKYPEkJXTXKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092249724059-2o3rdsiei0orc685tn48066qauqt0082.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

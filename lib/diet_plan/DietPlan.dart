@@ -3,6 +3,11 @@ import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/diet_plan/lowCost.dart';
 import 'package:diet_app/diet_plan/mealPlan.dart';
 import 'package:flutter/material.dart';
+import 'package:diet_app/diet_plan/costEffective.dart';
+import 'package:diet_app/diet_plan/diet.dart';
+import 'package:diet_app/diet_plan/lowCost.dart';
+import 'package:diet_app/diet_plan/mealPlan.dart';
+import 'package:flutter/material.dart';
 
 class DietPlan extends StatefulWidget {
   const DietPlan({Key? key}) : super(key: key);
@@ -14,6 +19,8 @@ class DietPlan extends StatefulWidget {
 class _DietPlanState extends State<DietPlan> {
   var toggleSelection = [true, false, false];
   List<Widget> widgetz = [Diet(), CostEffective(), LowCost(), MealPlan()];
+  bool ischanged = false;
+  bool ischanged1 = false;
   var index = 0;
   @override
   Widget build(BuildContext context) {
