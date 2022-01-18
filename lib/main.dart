@@ -1,4 +1,5 @@
 import 'package:diet_app/diet_plan/DietPlan.dart';
+import 'package:diet_app/end_drawer/diary.dart';
 import 'package:diet_app/end_drawer/profile.dart';
 import 'package:diet_app/exercise/Exercise.dart';
 import 'package:diet_app/places/Places.dart';
@@ -168,7 +169,10 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 title: Text("diary"),
                 leading: Icon(Icons.picture_in_picture_rounded),
                 trailing: Icon(Icons.keyboard_arrow_right_rounded),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => diary()));
+                },
               ),
             ),
             Divider(height: 0.1),
