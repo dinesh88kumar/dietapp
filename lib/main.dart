@@ -1,4 +1,5 @@
 import 'package:diet_app/diet_plan/DietPlan.dart';
+import 'package:diet_app/end_drawer/profile.dart';
 import 'package:diet_app/exercise/Exercise.dart';
 import 'package:diet_app/places/Places.dart';
 import 'package:diet_app/recipes/Recipes.dart';
@@ -131,7 +132,94 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           iconSize: 21,
           onTap: _onItemTapped,
           elevation: 0),
-      endDrawer: Drawer(),
+      endDrawer: Drawer(
+        elevation: 12.0,
+        child: Column(
+          children: [
+            Container(
+              height: 110,
+              width: 300,
+              color: Colors.amberAccent,
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                  ),
+                  Text("name"),
+                  Text("From the date"), //date he joined
+                  Text("email Id")
+                ],
+              ),
+            ),
+            Container(
+              child: ListTile(
+                title: Text("Profile"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => profile()));
+                },
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("diary"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("Reminder & tracker"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("top ranks"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("Goals"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("Settings"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+            Container(
+              child: ListTile(
+                title: Text("Logout"),
+                leading: Icon(Icons.picture_in_picture_rounded),
+                trailing: Icon(Icons.keyboard_arrow_right_rounded),
+                onTap: () {},
+              ),
+            ),
+            Divider(height: 0.1),
+          ],
+        ),
+      ),
     );
   }
 }
