@@ -1,3 +1,4 @@
+import 'package:diet_app/end_drawer/settings/Frequentques.dart';
 import 'package:flutter/material.dart';
 
 class settings extends StatefulWidget {
@@ -67,7 +68,12 @@ class _settingsState extends State<settings> {
                   Text("FAQ's / Report"),
                   SizedBox(width: 200),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Frequentques()));
+                      },
                       icon: Icon(Icons.keyboard_arrow_right_sharp))
                 ],
               )),

@@ -4,6 +4,7 @@ import 'package:diet_app/end_drawer/goal.dart';
 import 'package:diet_app/end_drawer/profile.dart';
 import 'package:diet_app/end_drawer/reminder.dart';
 import 'package:diet_app/end_drawer/settings.dart';
+import 'package:diet_app/end_drawer/topranks.dart';
 import 'package:diet_app/exercise/Exercise.dart';
 import 'package:diet_app/places/Places.dart';
 import 'package:diet_app/recipes/Recipes.dart';
@@ -196,7 +197,10 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 title: Text("top ranks"),
                 leading: Icon(Icons.picture_in_picture_rounded),
                 trailing: Icon(Icons.keyboard_arrow_right_rounded),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => topranks()));
+                },
               ),
             ),
             Divider(height: 0.1),
