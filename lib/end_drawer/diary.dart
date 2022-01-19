@@ -1,3 +1,7 @@
+import 'package:diet_app/end_drawer/diary/history.dart';
+import 'package:diet_app/end_drawer/diary/notes.dart';
+import 'package:diet_app/end_drawer/diary/nutrients.dart';
+import 'package:diet_app/end_drawer/diary/recipies.dart';
 import 'package:flutter/material.dart';
 
 class diary extends StatefulWidget {
@@ -40,7 +44,12 @@ class _diaryState extends State<diary> {
                                     fontWeight: FontWeight.w800,
                                     color: Colors.black)),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => history()));
+                          },
                         ),
                         Divider(height: 0.2),
                         SizedBox(height: 10),
@@ -53,7 +62,12 @@ class _diaryState extends State<diary> {
                                     fontWeight: FontWeight.w800,
                                     color: Colors.black)),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => nutrients()));
+                          },
                         ),
                         Divider(
                           height: 0.2,
@@ -68,7 +82,12 @@ class _diaryState extends State<diary> {
                                     fontWeight: FontWeight.w800,
                                     color: Colors.black)),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => notes()));
+                          },
                         ),
                         Divider(
                           height: 0.2,
@@ -83,7 +102,12 @@ class _diaryState extends State<diary> {
                                     fontWeight: FontWeight.w800,
                                     color: Colors.black)),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => recipies()));
+                          },
                         ),
                       ]))
                     ])
