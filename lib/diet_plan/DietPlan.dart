@@ -28,7 +28,7 @@ class _DietPlanState extends State<DietPlan> {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.only(top: 12, left: 8, right: 8),
-        child: Column(
+        child: ListView(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

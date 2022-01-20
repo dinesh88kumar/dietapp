@@ -11,8 +11,8 @@ class FoodList {
     snap.children.forEach((element) {
       foodlist1.add(Foods(
           element.child('foodName').value.toString(),
-          element.child('calories').toString(),
-          element.child('grams').toString()));
+          element.child('calories').value.toString(),
+          element.child('grams').value.toString()));
       print(foodlist1);
     });
     s.setState(() {
