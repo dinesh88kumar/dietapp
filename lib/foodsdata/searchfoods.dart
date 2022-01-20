@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diet_app/Selecting/FoodSelection.dart';
 import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/foodsdata/foodsdata.dart';
 import 'package:diet_app/main.dart';
@@ -73,28 +74,28 @@ class Search extends SearchDelegate {
             suggestions.elementAt(index).key,
           ),
           onTap: () {
-            var now = new DateTime.now();
-
-            var formatter = new DateFormat('dd-MM-yyyy');
-
-            String formattedDate = formatter.format(now);
-
-            print(formattedDate);
             query = suggestions.elementAt(index).key;
-            FirebaseFirestore.instance
-                .collection('Diet_app_users')
-                .doc('userid')
-                .collection(time)
-                .add({
-              'Date': formattedDate,
-              'foodname': suggestions.elementAt(index).key,
-              'calories': suggestions.elementAt(index).value[0],
-              'grams': suggestions.elementAt(index).value[1]
-            });
+            // FirebaseFirestore.instance
+            //     .collection('Diet_app_users')
+            //     .doc('userid')
+            //     .collection(time)
+            //     .add({
+            //   'Date': formattedDate,
+            //   'foodname': suggestions.elementAt(index).key,
+            //   'calories': suggestions.elementAt(index).value[0],
+            //   'grams': suggestions.elementAt(index).value[1]
+            // });
             print(suggestions.elementAt(index).key);
             print(suggestions.elementAt(index).value[0]);
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MyNavigationBar()));
+
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SelectFood(
+                          foodname: suggestions.elementAt(index).key,
+                          calories: suggestions.elementAt(index).value[0],
+                          time: time,
+                        )));
           },
         );
       },

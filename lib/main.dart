@@ -1,3 +1,4 @@
+import 'package:diet_app/Selecting/FoodSelection.dart';
 import 'package:diet_app/diet_plan/DietPlan.dart';
 import 'package:diet_app/exercise/Exercise.dart';
 import 'package:diet_app/places/Places.dart';

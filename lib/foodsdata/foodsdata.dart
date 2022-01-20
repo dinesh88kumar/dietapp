@@ -9,10 +9,8 @@ class FoodList {
     DataSnapshot snap = await FirebaseDatabase.instance.ref('foodItems').get();
 
     snap.children.forEach((element) {
-      foodlist1.add(Foods(
-          element.child('foodName').value.toString(),
-          element.child('calories').value.toString(),
-          element.child('grams').value.toString()));
+      foodlist1.add(Foods(element.child('foodName').value.toString(),
+          element.child('calories').value, element.child('grams').value));
       print(foodlist1);
     });
     s.setState(() {
@@ -24,7 +22,7 @@ class FoodList {
 
 class Foods {
   late String foodname;
-  late String calories;
-  late String grams;
+  late var calories;
+  late var grams;
   Foods(this.foodname, this.calories, this.grams);
 }
