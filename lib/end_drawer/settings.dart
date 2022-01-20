@@ -1,4 +1,5 @@
 import 'package:diet_app/end_drawer/settings/Frequentques.dart';
+import 'package:diet_app/end_drawer/settings/serviceterms.dart';
 import 'package:flutter/material.dart';
 
 class settings extends StatefulWidget {
@@ -51,10 +52,15 @@ class _settingsState extends State<settings> {
                   BoxDecoration(border: Border.all(color: Colors.black26)),
               child: Row(
                 children: [
-                  Text("privacy center"),
+                  Text("Terms of service"),
                   SizedBox(width: 200),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => serviceterms()));
+                      },
                       icon: Icon(Icons.keyboard_arrow_right_sharp))
                 ],
               )),

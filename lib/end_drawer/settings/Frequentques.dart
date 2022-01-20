@@ -18,7 +18,7 @@ class _FrequentquesState extends State<Frequentques> {
             textColor: Color(0xff00ffb2),
             iconColor: Color(0xff00ffb2),
             title: Text(
-              "What is Boova Customer Care Number?",
+              "?",
             ),
             children: [
               ListTile(
