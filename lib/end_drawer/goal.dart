@@ -48,18 +48,25 @@ class _goalState extends State<goal> {
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Starting Weight"),
-                      RichText(
-                          text: TextSpan(
-                              text: '74 ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                      Text("Kg")
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Starting Weight",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 180),
+                        RichText(
+                            text: TextSpan(
+                                text: '74 ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                        Text("Kg")
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
@@ -68,7 +75,13 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Current Weight"),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text("Current Weight",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                      ),
+                      SizedBox(width: 180),
                       RichText(
                           text: TextSpan(
                               text: '74 ',
@@ -86,7 +99,10 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("GoalWeight"),
+                      Text("GoalWeight",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
+                      SizedBox(width: 180),
                       RichText(
                           text: TextSpan(
                               text: '64 ',
@@ -104,7 +120,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Monthly goal"),
+                      Text("Monthly goal",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: 'Weight loss ',
@@ -121,7 +139,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Activity level"),
+                      Text("Activity level",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: 'Sedentary',
@@ -160,7 +180,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("carbohydrates  303 g "),
+                      Text("carbohydrates  303 g ",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '50 % ',
@@ -177,7 +199,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("protien  121 g "),
+                      Text("protien  121 g ",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '20 % ',
@@ -194,7 +218,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Fat  81g"),
+                      Text("Fat  81g",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '30 % ',
@@ -234,7 +260,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Workout/week "),
+                      Text("Workout/week ",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '3 ',
@@ -252,7 +280,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("minutes/workout"),
+                      Text("minutes/workout",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '50 ',
@@ -274,7 +304,9 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Glasses of water / day"),
+                      Text("Glasses of water / day",
+                          style: GoogleFonts.dmSans(
+                              fontSize: 15, fontWeight: FontWeight.w400)),
                       RichText(
                           text: TextSpan(
                               text: '9  ',
