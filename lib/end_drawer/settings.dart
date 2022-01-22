@@ -29,90 +29,108 @@ class _settingsState extends State<settings> {
             ],
           ),
           backgroundColor: Colors.tealAccent),
-      body: Column(
-        children: [
-          Container(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30),
+        child: Column(
+          children: [
+            Container(
+                height: 40,
+                width: 400,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black26)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Text("About"),
+                      SizedBox(width: 267),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.keyboard_arrow_right_sharp))
+                    ],
+                  ),
+                )),
+            Container(
+                height: 40,
+                width: 400,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black26)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Text("Terms of service"),
+                      SizedBox(width: 200),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => serviceterms()));
+                          },
+                          icon: Icon(Icons.keyboard_arrow_right_sharp))
+                    ],
+                  ),
+                )),
+            Container(
+                height: 40,
+                width: 400,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black26)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Text("FAQ's / Report"),
+                      SizedBox(width: 217),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Frequentques()));
+                          },
+                          icon: Icon(Icons.keyboard_arrow_right_sharp))
+                    ],
+                  ),
+                )),
+            Container(
+                height: 40,
+                width: 400,
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.black26)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Row(
+                    children: [
+                      Text("contact support"),
+                      SizedBox(width: 205),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.keyboard_arrow_right_sharp))
+                    ],
+                  ),
+                )),
+            Container(
               height: 40,
               width: 400,
               decoration:
                   BoxDecoration(border: Border.all(color: Colors.black26)),
-              child: Row(
-                children: [
-                  Text("About"),
-                  SizedBox(width: 200),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.keyboard_arrow_right_sharp))
-                ],
-              )),
-          Container(
-              height: 40,
-              width: 400,
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black26)),
-              child: Row(
-                children: [
-                  Text("Terms of service"),
-                  SizedBox(width: 200),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => serviceterms()));
-                      },
-                      icon: Icon(Icons.keyboard_arrow_right_sharp))
-                ],
-              )),
-          Container(
-              height: 40,
-              width: 400,
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black26)),
-              child: Row(
-                children: [
-                  Text("FAQ's / Report"),
-                  SizedBox(width: 200),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Frequentques()));
-                      },
-                      icon: Icon(Icons.keyboard_arrow_right_sharp))
-                ],
-              )),
-          Container(
-              height: 40,
-              width: 400,
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.black26)),
-              child: Row(
-                children: [
-                  Text("contact support"),
-                  SizedBox(width: 200),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.keyboard_arrow_right_sharp))
-                ],
-              )),
-          Container(
-            height: 40,
-            width: 400,
-            decoration:
-                BoxDecoration(border: Border.all(color: Colors.black26)),
-            child: Row(
-              children: [
-                Text("Delete Account"),
-                SizedBox(width: 200),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.keyboard_arrow_right_sharp))
-              ],
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Text("Delete Account"),
+                    SizedBox(width: 208),
+                    IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.keyboard_arrow_right_sharp))
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

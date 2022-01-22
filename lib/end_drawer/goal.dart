@@ -24,7 +24,7 @@ class _goalState extends State<goal> {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
-                Text('Edit profile'),
+                Text('goals'),
                 Icon(Icons.notifications, size: 24, color: Colors.black)
               ],
             ),
@@ -99,10 +99,13 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("GoalWeight",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      SizedBox(width: 180),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text("GoalWeight",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                      ),
+                      SizedBox(width: 205),
                       RichText(
                           text: TextSpan(
                               text: '64 ',
@@ -120,9 +123,13 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Monthly goal",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text("Monthly goal",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                      ),
+                      SizedBox(width: 180),
                       RichText(
                           text: TextSpan(
                               text: 'Weight loss ',
@@ -139,9 +146,13 @@ class _goalState extends State<goal> {
                       BoxDecoration(border: Border.all(color: Colors.black45)),
                   child: Row(
                     children: [
-                      Text("Activity level",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Text("Activity level",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                      ),
+                      SizedBox(width: 185),
                       RichText(
                           text: TextSpan(
                               text: 'Sedentary',
@@ -161,74 +172,96 @@ class _goalState extends State<goal> {
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Calories"),
-                      RichText(
-                          text: TextSpan(
-                              text: '2412 ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Calories",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 230),
+                        RichText(
+                            text: TextSpan(
+                                text: '2412 ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("carbohydrates  303 g ",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '50 % ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("carbohydrates  303 g ",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 140),
+                        RichText(
+                            text: TextSpan(
+                                text: '50 % ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("protien  121 g ",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '20 % ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("protien  121 g ",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 203),
+                        RichText(
+                            text: TextSpan(
+                                text: '20 % ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Fat  81g",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '30 % ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Fat  81g",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 245),
+                        RichText(
+                            text: TextSpan(
+                                text: '30 % ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                      ],
+                    ),
                   )),
               SizedBox(height: 20),
               Text("Workout goals",
@@ -240,57 +273,74 @@ class _goalState extends State<goal> {
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Cardio / week"),
-                      RichText(
-                          text: TextSpan(
-                              text: '4 ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                      Text("days")
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Cardio / week",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 190),
+                        RichText(
+                            text: TextSpan(
+                                text: '4 ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                        Text("days")
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Workout/week ",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '3 ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                      Text("days")
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Workout/week ",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 183),
+                        RichText(
+                            text: TextSpan(
+                                text: '3 ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                        Text("days")
+                      ],
+                    ),
                   )),
               Container(
                   height: 35,
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("minutes/workout",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '50 ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("minutes/workout",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 180),
+                        RichText(
+                            text: TextSpan(
+                                text: '50 ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                      ],
+                    ),
                   )),
               SizedBox(height: 20),
               Text("Water Goals",
@@ -302,20 +352,25 @@ class _goalState extends State<goal> {
                   width: 400,
                   decoration:
                       BoxDecoration(border: Border.all(color: Colors.black45)),
-                  child: Row(
-                    children: [
-                      Text("Glasses of water / day",
-                          style: GoogleFonts.dmSans(
-                              fontSize: 15, fontWeight: FontWeight.w400)),
-                      RichText(
-                          text: TextSpan(
-                              text: '9  ',
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                              style: TextStyle(
-                                color: Colors.teal,
-                              ))),
-                      Text("GL")
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text("Glasses of water / day",
+                            style: GoogleFonts.dmSans(
+                                fontSize: 15, fontWeight: FontWeight.w400)),
+                        SizedBox(width: 135),
+                        RichText(
+                            text: TextSpan(
+                                text: '9  ',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                ))),
+                        Text("GL")
+                      ],
+                    ),
                   )),
             ],
           )
