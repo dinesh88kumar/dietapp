@@ -1,12 +1,12 @@
 import 'package:diet_app/diet_plan/costEffective.dart';
 import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/diet_plan/lowCost.dart';
-import 'package:diet_app/diet_plan/mealPlan.dart';
+
 import 'package:flutter/material.dart';
 import 'package:diet_app/diet_plan/costEffective.dart';
 import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/diet_plan/lowCost.dart';
-import 'package:diet_app/diet_plan/mealPlan.dart';
+
 import 'package:flutter/material.dart';
 
 class DietPlan extends StatefulWidget {
@@ -18,7 +18,11 @@ class DietPlan extends StatefulWidget {
 
 class _DietPlanState extends State<DietPlan> {
   var toggleSelection = [true, false, false];
-  List<Widget> widgetz = [Diet(), CostEffective(), LowCost(), MealPlan()];
+  List<Widget> widgetz = [
+    CostEffective(),
+    LowCost(),
+    Diet(),
+  ];
   bool ischanged = false;
   bool ischanged1 = false;
   var index = 0;
@@ -71,46 +75,9 @@ class _DietPlanState extends State<DietPlan> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      index = 0;
-                    });
-                  },
-                  child: Container(
-                    height: 45,
-                    width: 90,
-                    decoration: BoxDecoration(
-                        color: Colors.tealAccent,
-                        borderRadius: BorderRadius.circular(6)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                              width: 28,
-                              child: Text(
-                                'meal',
-                                maxLines: 2,
-                                style: TextStyle(fontSize: 12),
-                              )),
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
                     onTap: () {
                       setState(() {
-                        index = 1;
+                        index = 0;
                       });
                     },
                     child: Container(
@@ -146,7 +113,7 @@ class _DietPlanState extends State<DietPlan> {
                 GestureDetector(
                     onTap: () {
                       setState(() {
-                        index = 2;
+                        index = 1;
                       });
                     },
                     child: Container(
@@ -180,41 +147,42 @@ class _DietPlanState extends State<DietPlan> {
                       ),
                     )),
                 GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        index = 3;
-                      });
-                    },
-                    child: Container(
-                      height: 45,
-                      width: 90,
-                      decoration: BoxDecoration(
-                          color: Colors.tealAccent,
-                          borderRadius: BorderRadius.circular(6)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                                width: 28,
-                                child: Text(
-                                  'meal plan',
-                                  maxLines: 2,
-                                  style: TextStyle(fontSize: 12),
-                                )),
-                            Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                              ),
-                            )
-                          ],
-                        ),
+                  onTap: () {
+                    setState(() {
+                      index = 2;
+                    });
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 90,
+                    decoration: BoxDecoration(
+                        color: Colors.tealAccent,
+                        borderRadius: BorderRadius.circular(6)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                              width: 28,
+                              child: Text(
+                                'my meal',
+                                maxLines: 2,
+                                style: TextStyle(fontSize: 12),
+                              )),
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                          )
+                        ],
                       ),
-                    ))
+                    ),
+                  ),
+                ),
               ],
             ),
             Container(

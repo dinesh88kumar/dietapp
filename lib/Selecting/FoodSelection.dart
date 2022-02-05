@@ -124,10 +124,10 @@ class _SelectFoodState extends State<SelectFood> {
                     'grams': _chosenValue
                   });
 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MyNavigationBar()));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => MyNavigationBar()));
                 },
                 child: Container(
                     height: 40,
