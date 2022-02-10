@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diet_app/diet_plan/costEffective.dart';
 import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/diet_plan/lowCost.dart';
@@ -8,6 +9,7 @@ import 'package:diet_app/diet_plan/diet.dart';
 import 'package:diet_app/diet_plan/lowCost.dart';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DietPlan extends StatefulWidget {
   const DietPlan({Key? key}) : super(key: key);
@@ -17,6 +19,31 @@ class DietPlan extends StatefulWidget {
 }
 
 class _DietPlanState extends State<DietPlan> {
+  late String startdate;
+  var currentdate;
+  @override
+  void initState() {
+    setState(() {
+      DocumentReference dref =
+          FirebaseFirestore.instance.collection('affleck').doc('2322');
+
+      dref.get().then((value) {
+        setState(() {
+          startdate = value.get('StartDate');
+          var now = new DateTime.now();
+
+          var formatter = new DateFormat('dd-MM-yyyy');
+
+          String formattedDate = formatter.format(now);
+          var a = formattedDate.split("-");
+          var b = startdate.split("-");
+          currentdate = (int.parse(a[0]) - int.parse(b[0])).abs();
+        });
+      });
+    });
+    super.initState();
+  }
+
   var toggleSelection = [true, false, false];
   List<Widget> widgetz = [
     CostEffective(),
@@ -39,7 +66,7 @@ class _DietPlanState extends State<DietPlan> {
               children: [
                 Container(
                   child: Center(
-                    child: Text('2/30'),
+                    child: Text('$currentdate/30'),
                   ),
                   width: 50,
                   height: 50,

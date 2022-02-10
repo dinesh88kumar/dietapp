@@ -1,3 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diet_app/DataCollecting/bmicalc.dart';
+import 'package:diet_app/DataCollecting/firstpage.dart';
+import 'package:diet_app/DateCalculating/DateCalc.dart';
 import 'package:diet_app/Selecting/FoodSelection.dart';
 import 'package:diet_app/diet_plan/DietPlan.dart';
 import 'package:diet_app/exercise/Exercise.dart';
@@ -8,6 +12,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:intl/intl.dart';
 
 void main() async {
   await GetStorage.init();
@@ -45,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MyNavigationBar();
+    return BmiCalc();
   }
 }
 
@@ -56,12 +61,6 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    DietPlan(),
-    Exercises(),
-    Recipes(),
-    Places()
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -69,35 +68,37 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     });
   }
 
-  // static List<Widget> _widget = <Widget>[
-  //   AnimatedTextKit(
-  //     animatedTexts: [
-  //       ColorizeAnimatedText(
-  //         'OFF CAMPUS DRIVES',
-  //         textStyle: colorizeTextStyle,
-  //         colors: colorizeColors,
-  //       ),
-  //       ColorizeAnimatedText(
-  //         'OFF CAMPUS DRIVES',
-  //         textStyle: colorizeTextStyle,
-  //         colors: colorizeColors,
-  //       ),
-  //       ColorizeAnimatedText(
-  //         'OFF CAMPUS DRIVES',
-  //         textStyle: colorizeTextStyle,
-  //         colors: colorizeColors,
-  //       ),
-  //     ],
-  //     isRepeatingAnimation: true,
-  //     onTap: () {
-  //       print("Tap Event");
-  //     },
-  //   ),
-  //   Text('INTERNSHIPS',
-  //       style: GoogleFonts.poppins(textStyle: TextStyle(color: Colors.black))),
-  //   Text('TECH NEWS',
-  //       style: GoogleFonts.poppins(textStyle: TextStyle(color: Colors.black))),
-  // ];
+  late String startdate;
+  var currentdate;
+  @override
+  void initState() {
+    setState(() {
+      DocumentReference dref =
+          FirebaseFirestore.instance.collection('affleck').doc('2322');
+
+      dref.get().then((value) {
+        setState(() {
+          startdate = value.get('StartDate');
+          var now = new DateTime.now();
+
+          var formatter = new DateFormat('dd-MM-yyyy');
+
+          String formattedDate = formatter.format(now);
+          var a = formattedDate.split("-");
+          var b = startdate.split("-");
+          currentdate = (int.parse(a[0]) - int.parse(b[0])).abs();
+        });
+      });
+    });
+    super.initState();
+  }
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    DietPlan(),
+    Exercises(),
+    Recipes(),
+    Places()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +113,11 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('title'),
+              GestureDetector(
+                  onTap: () {
+                    DateCalc().startDiet();
+                  },
+                  child: Text('title')),
               Icon(Icons.notifications, size: 24, color: Colors.black)
             ],
           ),
