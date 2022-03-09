@@ -70,7 +70,7 @@ class _secondpageState extends State<secondpage> {
                 child: Container(
                   height: 20,
                   width: 90,
-                  child: Text("Next >"),
+                  child: Text("Next>"),
                 ),
                 onTap: () {
                   Navigator.push(context,

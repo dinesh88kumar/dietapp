@@ -17,6 +17,32 @@ class _CostEffectiveState extends State<CostEffective> {
 
   @override
   Widget build(BuildContext context) {
+//     Map l = {'chicken': 230, 'parotta': 100, 'chapatti': 200, 'dosa': 120};
+
+//     var a = 150;
+
+//     List d = [0, 0];
+//     var m = 100000;
+//     for (int i = 0; i < l.length; i++) {
+//       for (int j = 0; j < l.length; j++) {
+//         if (i != j) {
+//           if (l[i] + l[j] == a) {
+//             print("l");
+//           } else {
+//             var n = (l[i] - l[j]).abs();
+
+//             if (m > n) {
+//               m = n;
+//               d[0] = i;
+//               d[1] = j;
+// //            print();
+//             }
+//           }
+//         }
+//       }
+//     }
+
+    // print(d.toString());
     return Container(
       child: SafeArea(
           child: SingleChildScrollView(
@@ -186,38 +212,6 @@ class _CostEffectiveState extends State<CostEffective> {
             ),
             Text(breakfast['calories'].toString()),
             Container(
-              width: 60,
-              child: Column(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      icon: Icon(
-                        Icons.arrow_circle_up_outlined,
-                        color: Colors.black,
-                      )),
-                  Text('22k'),
-                ],
-              ),
-            ),
-            Container(
-              width: 60,
-              child: Column(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      icon: Icon(
-                        Icons.arrow_circle_down_outlined,
-                        color: Colors.black,
-                      )),
-                  Text("not (180)"),
-                ],
-              ),
-            ),
-            Container(
               width: 40,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 15),
@@ -245,38 +239,6 @@ class _CostEffectiveState extends State<CostEffective> {
                     ),
                   ),
                   Text(breakfast['calories1a'].toString()),
-                  Container(
-                    width: 60,
-                    child: Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              setState(() {});
-                            },
-                            icon: Icon(
-                              Icons.arrow_circle_up_outlined,
-                              color: Colors.black,
-                            )),
-                        Text('22k'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 60,
-                    child: Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              setState(() {});
-                            },
-                            icon: Icon(
-                              Icons.arrow_circle_down_outlined,
-                              color: Colors.black,
-                            )),
-                        Text("not (180)"),
-                      ],
-                    ),
-                  ),
                   Container(
                     width: 40,
                     child: Padding(
@@ -307,38 +269,6 @@ class _CostEffectiveState extends State<CostEffective> {
                     ),
                   ),
                   Text(breakfast['calories1b'].toString()),
-                  Container(
-                    width: 60,
-                    child: Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              setState(() {});
-                            },
-                            icon: Icon(
-                              Icons.arrow_circle_up_outlined,
-                              color: Colors.black,
-                            )),
-                        Text('22k'),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 60,
-                    child: Column(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              setState(() {});
-                            },
-                            icon: Icon(
-                              Icons.arrow_circle_down_outlined,
-                              color: Colors.black,
-                            )),
-                        Text("not (180)"),
-                      ],
-                    ),
-                  ),
                   Container(
                     width: 40,
                     child: Padding(
