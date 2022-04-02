@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diet_app/Chat/chatUsers.dart';
 import 'package:diet_app/DataCollecting/bmicalc.dart';
 import 'package:diet_app/DataCollecting/firstpage.dart';
 import 'package:diet_app/DateCalculating/DateCalc.dart';
+import 'package:diet_app/Login/signup.dart';
 import 'package:diet_app/Selecting/FoodSelection.dart';
 import 'package:diet_app/diet_plan/DietPlan.dart';
-import 'package:diet_app/exercise/Exercise.dart';
-import 'package:diet_app/places/Places.dart';
+import 'package:diet_app/gym/Gym.dart';
+
 import 'package:diet_app/recipes/Recipes.dart';
 import 'package:diet_app/userdata/UsersData.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -18,6 +20,7 @@ void main() async {
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+      // ignore: prefer_const_constructors
       options: FirebaseOptions(
           apiKey: "AIzaSyD6dC1Ng2f6wH52_Pij0sp5KjDf3iY85oY",
           authDomain: "restaurant-2815b.firebaseapp.com",
@@ -27,6 +30,7 @@ void main() async {
           messagingSenderId: "1092249724059",
           appId: "1:1092249724059:web:3966b29623d3338374523e",
           measurementId: "G-BLXG5H621H"));
+  // ignore: prefer_const_constructors
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
 
@@ -39,18 +43,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  var name;
+  var name, uid;
   void initState() {
     setState(() {
       final _storage = GetStorage();
       name = _storage.read('name');
+      uid = _storage.read("uid");
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MyNavigationBar();
+    if (name != null && uid != null) {
+      return MyNavigationBar();
+    } else {
+      return Signup();
+    }
   }
 }
 
@@ -60,7 +69,7 @@ class MyNavigationBar extends StatefulWidget {
 }
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -95,33 +104,35 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     DietPlan(),
-    Exercises(),
+    Gym(),
+    ChatUsers(),
     Recipes(),
-    Places()
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15))),
-          elevation: 8,
-          toolbarHeight: 60,
-          iconTheme: IconThemeData(color: Colors.black),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                  onTap: () {
-                    DateCalc().startDiet();
-                  },
-                  child: Text('title')),
-              Icon(Icons.notifications, size: 24, color: Colors.black)
-            ],
-          ),
-          backgroundColor: Colors.tealAccent),
+      appBar: _selectedIndex != 2
+          ? AppBar(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15))),
+              elevation: 8,
+              toolbarHeight: 60,
+              iconTheme: IconThemeData(color: Colors.black),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        DateCalc().startDiet();
+                      },
+                      child: Text('title')),
+                  Icon(Icons.notifications, size: 24, color: Colors.black)
+                ],
+              ),
+              backgroundColor: Colors.tealAccent)
+          : null,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -132,28 +143,28 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 FontAwesomeIcons.briefcase,
                 color: _selectedIndex == 0 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('Diet'),
+              label: 'Diet',
             ),
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.boxOpen,
                 color: _selectedIndex == 1 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('excersise'),
+              label: 'excersise',
             ),
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.newspaper,
                 color: _selectedIndex == 2 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('Places'),
+              label: 'Places',
             ),
             BottomNavigationBarItem(
               icon: FaIcon(
                 FontAwesomeIcons.newspaper,
                 color: _selectedIndex == 3 ? Colors.tealAccent : Colors.black,
               ),
-              title: Text('Recipes'),
+              label: 'Recipes',
             ),
           ],
           type: BottomNavigationBarType.shifting,

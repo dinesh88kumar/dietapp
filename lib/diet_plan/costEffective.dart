@@ -12,37 +12,36 @@ class _CostEffectiveState extends State<CostEffective> {
   @override
   void initState() {
     GetDailyDietData.refreshdata(this);
+    // Map l = {'chicken': 230, 'parotta': 100, 'chapatti': 200, 'dosa': 120};
+
+    // var a = 150;
+
+    // List d = [0, 0];
+    // var m = 100000;
+    // for (int i = 0; i < l.length; i++) {
+    //   for (int j = 0; j < l.length; j++) {
+    //     print(l[i] + '' + l[j]);
+    //     if (i != j) {
+    //       if (l[i] + l[j] == a) {
+    //         print("l");
+    //       } else {
+    //         var n = (l[i] - l[j]).abs();
+
+    //         if (m > n) {
+    //           m = n;
+    //           d[0] = i;
+    //           d[1] = j;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-//     Map l = {'chicken': 230, 'parotta': 100, 'chapatti': 200, 'dosa': 120};
-
-//     var a = 150;
-
-//     List d = [0, 0];
-//     var m = 100000;
-//     for (int i = 0; i < l.length; i++) {
-//       for (int j = 0; j < l.length; j++) {
-//         if (i != j) {
-//           if (l[i] + l[j] == a) {
-//             print("l");
-//           } else {
-//             var n = (l[i] - l[j]).abs();
-
-//             if (m > n) {
-//               m = n;
-//               d[0] = i;
-//               d[1] = j;
-// //            print();
-//             }
-//           }
-//         }
-//       }
-//     }
-
-    // print(d.toString());
     return Container(
       child: SafeArea(
           child: SingleChildScrollView(
