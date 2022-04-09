@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "restaurant-2815b"
+  },
+  "targets": {
+    "restaurant-2815b": {
+      "hosting": {
+        "tr": [
+          "restaurant-2815b"
+        ]
+      }
+    }
+  }
+}
