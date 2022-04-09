@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diet_app/Login/Authservice.dart';
+import 'package:diet_app/Login/SignIn.dart';
 import 'package:diet_app/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,18 @@ class _SignupState extends State<Signup> {
                 SizedBox(
                   height: 15,
                 ),
-                _showFormActions()
+                _showFormActions(),
+                SizedBox(
+                  height: 15,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AuthPage()));
+                    },
+                    child: Container(
+                      child: Text("Sign in"),
+                    ))
               ],
             ),
           ),

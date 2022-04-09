@@ -61,8 +61,18 @@ class _GymMembersState extends State<GymMembers> {
       "username": Name,
       "userid": id,
     });
-       Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ChatUsers()));
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(id)
+        .collection('chats')
+        .add({
+      "Roomid": a,
+      "username": Username,
+      "userid": Userid,
+    });
+
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ChatUsers()));
   }
 
   @override
@@ -126,10 +136,12 @@ class _GymMembersState extends State<GymMembers> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          Name,
-                          style: TextStyle(fontSize: 16),
-                        ),
+                        Userid == id
+                            ? Text("MySelf")
+                            : Text(
+                                Name,
+                                style: TextStyle(fontSize: 16),
+                              ),
                         SizedBox(
                           height: 6,
                         ),
@@ -150,16 +162,19 @@ class _GymMembersState extends State<GymMembers> {
           ),
           GestureDetector(
             onTap: () async {
-              await FirebaseFirestore.instance
-                  .collection('users')
-                  .doc(Userid)
-                  .collection('chats')
-                  .where('userid', isEqualTo: id)
-                  .get()
-                  .then((value) => value.size > 0
-                      ? print("yes here it is")
-                      : createRoom(id, Name));
-
+              if (Userid == id) {
+                print("its u");
+              } else {
+                await FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(Userid)
+                    .collection('chats')
+                    .where('userid', isEqualTo: id)
+                    .get()
+                    .then((value) => value.size > 0
+                        ? print("yes here it is")
+                        : createRoom(id, Name));
+              }
               /////a
               // FirebaseFirestore.instance
               //     .collection('users')
@@ -174,7 +189,6 @@ class _GymMembersState extends State<GymMembers> {
               //     .doc(id)
               //     .collection('messages')
               //     .add({"msg": " "});
-           
             },
             child: Text(
               'Chat',
